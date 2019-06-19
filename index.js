@@ -1,34 +1,41 @@
-function createCircle(radius){
-    return {
-       radius,
-       draw: function(){
-           console.log('draw');
-       }
-   };   
-   }
-   const circle = createCircle(1);
-   circle.draw();
-   
-   // Constructor Function
-   
-   function Circle(radius){
-       console.log('this', this);
-       this.radius = radius;
-       this.draw = function(){
-           console.log("draw");
-       }
-   }
-   
-   const another = new Circle(1);
-
-const Circle1 = new Function('radius',`
-this.radius = radius;
-this.draw = function(){
-    console.log("draw");
-}
-`);
-
-const circle = new Circle(1);
-//got to lynda.com 10. 5- Constructor Property 
-// 6-functions are objects
-//learn using createJS
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Lon Hosford Basic Animation in Create JS</title>
+<script src="https://code.createjs.com/1.0.0/createjs.min.js"></script>
+<script>
+        var stage, sunShape;
+		function init()
+		{
+            stage = new createjs.Stage("stage-canvas");
+			sunShape = new createjs.Shape();
+			sunShape.graphics.beginFill("#F00");
+			sunShape.graphics.drawCircle(0, 0, 25);
+			sunShape.graphics.endFill();
+			stage.addChild(sunShape);
+			stage.update();
+		}
+</script>
+<style>s
+	body {
+		margin: 0 ;
+		padding: 15px;
+		background-color: #ccc;
+	}
+	canvas {
+		border: solid 2px #000;
+		background-color: #fff;
+		display: block;
+		margin: 0px auto 0px auto;
+		padding-left: 0;
+		padding-right: 0;
+	}
+</style>
+</head>
+<body onload="init();">
+<canvas id="stage-canvas" width="550" height="400">
+	This web browser does not support canvas.
+</canvas>
+</body>
+</html>
