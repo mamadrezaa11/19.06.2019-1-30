@@ -31,3 +31,4 @@ this.draw = function(){
 const circle = new Circle(1);
 //got to lynda.com 10. 5- Constructor Property 
 // 6-functions are objects
+//learn using createJS
